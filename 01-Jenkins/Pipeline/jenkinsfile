@@ -14,7 +14,11 @@ node {
   stage('Maven-Clean') {
    sh label: '', script: 'mvn clean'
   }
-    
+  stage('Sonar Analysis'){
+    withSonarQubeEnv('SonarQube'){
+    sh 'mvn sonar:sonar'
+        			 }
+       			 }
  stage('Maven-Compile') {
    sh label: '', script: 'mvn compile'
   }
@@ -30,6 +34,15 @@ node {
    stage('Archive-Artifacts') {
    archiveArtifacts 'target/*.war'
   }
+   stage('Jfrog Artifacory Upload') {
+     def server= Artifactory.server 'Artifactory'
+     def uploadSpec= """{
+                    "files": [{
+                    "pattern": "/target/*.war",
+                    "target": "petclinic"}]
+                    }"""
+        server.upload(uploadSpec)
+        }
    stage('Docker-Stage-Deployment') {
    sh label: '', script: 'docker-compose up -d --build'
   }
