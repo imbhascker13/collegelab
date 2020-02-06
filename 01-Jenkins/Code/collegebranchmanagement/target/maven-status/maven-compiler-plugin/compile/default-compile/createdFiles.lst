@@ -1,0 +1,13 @@
+com\mindtree\collegebranchmanagement\entity\College.class
+com\mindtree\collegebranchmanagement\repository\BranchRepository.class
+com\mindtree\collegebranchmanagement\service\branchServiceImpl\BranchServiceImpl.class
+com\mindtree\collegebranchmanagement\exception\CollegeBranchApplicationException.class
+com\mindtree\collegebranchmanagement\ServletInitializer.class
+com\mindtree\collegebranchmanagement\service\CollegeService.class
+com\mindtree\collegebranchmanagement\controller\CollegeBranchController.class
+com\mindtree\collegebranchmanagement\service\BranchService.class
+com\mindtree\collegebranchmanagement\exception\ExceptionHandler.class
+com\mindtree\collegebranchmanagement\service\collegeServiceImpl\CollegeServiceImpl.class
+com\mindtree\collegebranchmanagement\entity\Branch.class
+com\mindtree\collegebranchmanagement\repository\CollegeRepository.class
+com\mindtree\collegebranchmanagement\CollegebranchmanagementApplication.class
